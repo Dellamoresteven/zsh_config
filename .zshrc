@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/dellamorestev/.oh-my-zsh"
+export ZSH="/home/steven/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -73,10 +73,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump fzf zsh-autosuggestions zsh-completions k virtualenv virtualenvwrapper fd catimg python transfer tmux)
-
-
-
+plugins=(git autojump fzf zsh-autosuggestions zsh-completions k virtualenv virtualenvwrapper fd catimg python transfer tmux zsh-syntax-highlighting)
 
 PATH=$PATH:/usr/bin/tmux
 source $ZSH/oh-my-zsh.sh
@@ -119,4 +116,4 @@ alias h='history'
 alias c='clear'
 bindkey '^ ' autosuggest-accept
 
-source /home/dellamorestev/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
