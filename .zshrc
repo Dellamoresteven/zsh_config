@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/steven/.oh-my-zsh"
+export ZSH="/home/dellamorestev/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -45,12 +45,12 @@ ZSH_TMUX_AUTOSTART=true
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
 # See https://github.com/ohmyzsh/ohmyzsh/issues/5765
-COMPLETION_WAITING_DOTS="true"
+#COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -73,7 +73,8 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump fzf zsh-autosuggestions zsh-completions k virtualenv virtualenvwrapper fd catimg python transfer tmux zsh-syntax-highlighting)
+plugins=(git autojump fzf zsh-completions k virtualenv virtualenvwrapper fd catimg python transfer tmux zsh-syntax-highlighting)
+#plugins=(git autojump fzf k tmux zsh-syntax-highlighting)
 
 PATH=$PATH:/usr/bin/tmux
 source $ZSH/oh-my-zsh.sh
@@ -111,9 +112,12 @@ alias nv='nvim'
 alias ls='ls --color=auto'
 alias l='ls --color=auto'
 alias grep='grep --color'
-alias ff='find . -type f -name'
+alias ff='find . -iname'
 alias h='history'
 alias c='clear'
-bindkey '^ ' autosuggest-accept
 
 #source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
